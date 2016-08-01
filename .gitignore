@@ -1,4 +1,6 @@
 *.iml
 .idea
+felix-bundles
+felix-cache
 pom.xml.versionsBackup
 target

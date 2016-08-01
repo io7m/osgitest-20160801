@@ -14,31 +14,8 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.service0.provider;
+/**
+ * Example application.
+ */
 
-import com.io7m.service0.api.SpeakerType;
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
-
-@Component(
-  name = "com.io7m.service0",
-  immediate = true)
-public final class Speaker implements SpeakerType
-{
-  public Speaker()
-  {
-
-  }
-
-  @Activate
-  public void onActivate()
-  {
-    System.out.println("Starting speaker service");
-  }
-
-  @Override
-  public void speak(final String text)
-  {
-    System.out.println("SPEAK: " + text);
-  }
-}
+package com.io7m.service0.application;

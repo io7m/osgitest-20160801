@@ -14,31 +14,44 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.service0.provider;
+package com.io7m.service0.application;
 
 import com.io7m.service0.api.SpeakerType;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 
-@Component(
-  name = "com.io7m.service0",
-  immediate = true)
-public final class Speaker implements SpeakerType
+@Component(immediate = true)
+public final class Application
 {
-  public Speaker()
+  private SpeakerType speaker;
+
+  public Application()
   {
 
   }
 
   @Activate
-  public void onActivate()
+  protected void onActivate()
   {
-    System.out.println("Starting speaker service");
+    System.out.println("Starting application");
   }
 
-  @Override
-  public void speak(final String text)
+  @Reference(
+    name = "com.io7m.service0.application",
+    service = SpeakerType.class,
+    cardinality = ReferenceCardinality.MANDATORY,
+    policy = ReferencePolicy.STATIC,
+    unbind = "unsetSpeaker")
+  protected void setSpeaker(final SpeakerType s)
   {
-    System.out.println("SPEAK: " + text);
+    this.speaker = s;
+  }
+
+  protected void unsetSpeaker(final SpeakerType s)
+  {
+    this.speaker = null;
   }
 }
