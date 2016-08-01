@@ -15,7 +15,7 @@
  */
 
 /**
- * Core service0 implementation.
+ * Declarative service0 implementation.
  */
 
-package com.io7m.service0.provider;
+package com.io7m.service0.provider_declarative;

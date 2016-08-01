@@ -14,29 +14,8 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.service0.provider;
+/**
+ * Imperative service0 implementation.
+ */
 
-import com.io7m.service0.api.SpeakerType;
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
-
-@Component
-public final class Speaker implements SpeakerType
-{
-  public Speaker()
-  {
-    System.out.println("Speaker: constructor");
-  }
-
-  @Activate
-  private void onActivate()
-  {
-    System.out.println("Speaker: onActivate");
-  }
-
-  @Override
-  public void speak(final String text)
-  {
-    System.out.println("SPEAK: " + text);
-  }
-}
+package com.io7m.service0.provider_imperative;

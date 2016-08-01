@@ -10,7 +10,7 @@
     <groupId>com.io7m.experimental</groupId>
     <version>0.1.0</version>
   </parent>
-  <artifactId>service0-provider-declarative</artifactId>
+  <artifactId>service0-provider-imperative</artifactId>
   <packaging>bundle</packaging>
 
   <dependencies>
@@ -27,8 +27,7 @@
     </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.service.component.annotations</artifactId>
-      <scope>provided</scope>
+      <artifactId>org.osgi.core</artifactId>
     </dependency>
   </dependencies>
 
@@ -40,8 +39,9 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Bundle-Activator>com.io7m.service0.provider_imperative.Speaker</Bundle-Activator>
             <Export-Package>
-              com.io7m.service0.provider_declarative,
+              com.io7m.service0.provider_imperative,
               com.io7m.service0.api;provide:=false
             </Export-Package>
           </instructions>
