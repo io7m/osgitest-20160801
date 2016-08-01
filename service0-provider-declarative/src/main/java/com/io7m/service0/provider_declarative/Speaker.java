@@ -20,7 +20,7 @@ import com.io7m.service0.api.SpeakerType;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
-@Component
+@Component(immediate = true)
 public final class Speaker implements SpeakerType
 {
   public Speaker()
