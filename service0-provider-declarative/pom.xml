@@ -10,7 +10,7 @@
     <groupId>com.io7m.experimental</groupId>
     <version>0.1.0</version>
   </parent>
-  <artifactId>service0-provider</artifactId>
+  <artifactId>service0-provider-declarative</artifactId>
   <packaging>bundle</packaging>
 
   <dependencies>

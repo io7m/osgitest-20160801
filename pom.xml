@@ -12,7 +12,7 @@
 
   <modules>
     <module>service0-api</module>
-    <module>service0-provider</module>
+    <module>service0-provider-declarative</module>
     <module>application</module>
   </modules>
 
