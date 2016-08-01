@@ -40,6 +40,9 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Import-Package>
+              com.io7m.service0.api
+            </Import-Package>
             <Export-Package>
               com.io7m.service0.provider_declarative,
               com.io7m.service0.api;provide:=false

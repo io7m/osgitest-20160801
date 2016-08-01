@@ -28,6 +28,7 @@
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
@@ -40,6 +41,10 @@
         <configuration>
           <instructions>
             <Bundle-Activator>com.io7m.service0.provider_imperative.Speaker</Bundle-Activator>
+            <Import-Package>
+              com.io7m.service0.api,
+              org.osgi.framework
+            </Import-Package>
             <Export-Package>
               com.io7m.service0.provider_imperative,
               com.io7m.service0.api;provide:=false
