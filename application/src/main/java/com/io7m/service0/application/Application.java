@@ -30,13 +30,13 @@ public final class Application
 
   public Application()
   {
-
+    System.out.println("Application: constructor");
   }
 
   @Activate
   private void onActivate()
   {
-    System.out.println("Starting application");
+    System.out.println("Application: onActivate");
   }
 
   @Reference(
@@ -47,11 +47,13 @@ public final class Application
     unbind = "unsetSpeaker")
   private void setSpeaker(final SpeakerType s)
   {
+    System.out.println("Application: setSpeaker");
     this.speaker = s;
   }
 
   private void unsetSpeaker(final SpeakerType s)
   {
+    System.out.println("Application: unsetSpeaker");
     this.speaker = null;
   }
 }

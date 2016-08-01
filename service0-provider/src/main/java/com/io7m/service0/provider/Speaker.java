@@ -25,13 +25,13 @@ public final class Speaker implements SpeakerType
 {
   public Speaker()
   {
-
+    System.out.println("Speaker: constructor");
   }
 
   @Activate
   private void onActivate()
   {
-    System.out.println("Starting speaker service");
+    System.out.println("Speaker: onActivate");
   }
 
   @Override
