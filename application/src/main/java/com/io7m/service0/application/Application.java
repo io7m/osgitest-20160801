@@ -23,7 +23,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 
-@Component(immediate = true)
+@Component
 public final class Application
 {
   private SpeakerType speaker;
@@ -34,23 +34,23 @@ public final class Application
   }
 
   @Activate
-  protected void onActivate()
+  private void onActivate()
   {
     System.out.println("Starting application");
   }
 
   @Reference(
-    name = "com.io7m.service0.application",
+    name = "com.io7m.service0.application.Application",
     service = SpeakerType.class,
     cardinality = ReferenceCardinality.MANDATORY,
     policy = ReferencePolicy.STATIC,
     unbind = "unsetSpeaker")
-  protected void setSpeaker(final SpeakerType s)
+  private void setSpeaker(final SpeakerType s)
   {
     this.speaker = s;
   }
 
-  protected void unsetSpeaker(final SpeakerType s)
+  private void unsetSpeaker(final SpeakerType s)
   {
     this.speaker = null;
   }

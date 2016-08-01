@@ -20,9 +20,7 @@ import com.io7m.service0.api.SpeakerType;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
-@Component(
-  name = "com.io7m.service0",
-  immediate = true)
+@Component
 public final class Speaker implements SpeakerType
 {
   public Speaker()
@@ -31,7 +29,7 @@ public final class Speaker implements SpeakerType
   }
 
   @Activate
-  public void onActivate()
+  private void onActivate()
   {
     System.out.println("Starting speaker service");
   }
